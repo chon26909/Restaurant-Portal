@@ -9,7 +9,7 @@ interface IRoutesType {
 const router: IRoutesType = {
     public: [
         {
-            path: "/",
+            path: "/login",
             element: LoginPage
         }
     ],

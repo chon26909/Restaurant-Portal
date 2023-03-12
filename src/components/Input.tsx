@@ -46,7 +46,7 @@ const InputPassword: FC<Props> = ({ label, full, errorMessage, ...other }) => {
                         inputClass
                     ].join(' ')}
                 />
-                <div className='text-gray_text absolute top-1.5 right-4 cursor-pointer w-8 h-8 flex items-center justify-center text-[20px]' onClick={() => setShow((s) => !s)}>
+                <div className='text-gray_text absolute top-1.5 right-2 cursor-pointer w-8 h-8 flex items-center justify-center text-[20px]' onClick={() => setShow((s) => !s)}>
                     {show ? <BsEye size={25}/> :<BsEyeSlash size={25} />}
                 </div>
             </div>
