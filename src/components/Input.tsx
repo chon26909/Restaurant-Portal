@@ -12,7 +12,7 @@ const inputClass = 'text-[16px] mt-1 px-3 py-2 bg-white border shadow-sm border-
 
 const InputText = ({ label, full, errorMessage, ...other }: Props) => {
     return (
-        <div className={[full ? 'w-full' : 'inline-block', ' mt-2 mr-3'].join(' ')}>
+        <div className={[full ? 'w-full' : 'inline-block', ' mt-2'].join(' ')}>
             <label htmlFor='text' className='block'>
                 {label}
             </label>
@@ -31,7 +31,7 @@ const InputPassword: FC<Props> = ({ label, full, errorMessage, ...other }) => {
     const [show, setShow] = useState(false);
 
     return (
-        <div className={[full ? 'w-full' : 'inline-block', 'mt-2 mr-3'].join(' ')}>
+        <div className={[full ? 'w-full' : 'inline-block', 'mt-2'].join(' ')}>
             <label htmlFor='text' className='block'>
                 {label}
             </label>
@@ -47,7 +47,7 @@ const InputPassword: FC<Props> = ({ label, full, errorMessage, ...other }) => {
                     ].join(' ')}
                 />
                 <div className='text-gray_text absolute top-1.5 right-2 cursor-pointer w-8 h-8 flex items-center justify-center text-[20px]' onClick={() => setShow((s) => !s)}>
-                    {show ? <BsEye size={25}/> :<BsEyeSlash size={25} />}
+                    {show ? <BsEye size={25} /> : <BsEyeSlash size={25} />}
                 </div>
             </div>
             {errorMessage && errorMessage.length > 0 ? <div className='text-red'>{errorMessage + ' '}&nbsp;</div> : undefined}
