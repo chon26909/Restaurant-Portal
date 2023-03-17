@@ -4,10 +4,10 @@ services:
 
   # Application
   web:
-    container_name: web
+    container_name: restaurant-portal
     build:
       dockerfile: Dockerfile
-      context: "./"
+      context: "."
     ports:
       - 80:80
     expose:
