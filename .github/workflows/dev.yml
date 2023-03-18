@@ -18,13 +18,13 @@ jobs:
       - name: docker compose version
         run: docker-compose -v
       - name: docker compose build
-        run: docker-compose -f "docker-compose.yml" build
+        run: docker-compose -f "docker-compose.yml" up -d --build
 
-  deploy:
-    needs: build
-    runs-on:
-      - self-hosted
-      - dev
-    steps: 
-      - name: docker-compose up
-        run: docker-compose -f "docker-compose.yml" up -d
+  # deploy:
+  #   needs: build
+  #   runs-on:
+  #     - self-hosted
+  #     - dev
+  #   steps: 
+  #     - name: docker-compose up
+  #       run: docker-compose -f "docker-compose.yml" up -d
