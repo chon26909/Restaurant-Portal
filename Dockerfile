@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json .
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run build:dev
 
 FROM nginx:stable-alpine as deploy-stage
 COPY --from=build-stage /app/dist /usr/share/nginx/html
