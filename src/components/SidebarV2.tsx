@@ -158,7 +158,7 @@ const SidebarV2 = () => {
 
     const SubMenu: FC<{ submenu?: Menu[], collapsed?: boolean }> = (props) => {
 
-        const isCollapsed = (collapsed?: boolean) => collapsed ? 'opacity-0 max-h-0 overflow-y-hidden' : 'opacity-1 max-h-[300px] overflow-y-auto';
+        const isCollapsed = (collapsed?: boolean) => collapsed ? 'opacity-0 max-h-0 overflow-y-hidden' : 'opacity-1 max-h-[1000px] overflow-y-auto';
 
         return <div className={['transition-all ease-linear duration-200', isCollapsed(props.collapsed)].join(" ")} >
             {props.submenu?.map((item: any, index) => {
