@@ -4,7 +4,7 @@ services:
 
   # Application
   web:
-    container_name: restaurant-portal:latest
+    container_name: restaurant-portal
     build:
       dockerfile: Dockerfile
       context: "."
