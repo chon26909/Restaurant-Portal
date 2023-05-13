@@ -31,7 +31,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:${{ github.run_number }}, ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:latest
 
-  pull-image:
+  pull:
     needs: build
     runs-on:
       - self-hosted
@@ -41,7 +41,7 @@ jobs:
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:latest
 
   deploy:
-    needs: pull-image
+    needs: pull
     runs-on:
       - self-hosted
       - dev-server
