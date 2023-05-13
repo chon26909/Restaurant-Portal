@@ -4,10 +4,11 @@ services:
 
   # Application
   web:
+    images: chon26909/restaurant-portal:latest
     container_name: restaurant-portal
-    build:
-      dockerfile: Dockerfile
-      context: "."
+    # build:
+    #   dockerfile: Dockerfile
+    #   context: "."
     ports:
       - 80:80
     expose:
