@@ -4,7 +4,7 @@ services:
 
   # Application
   web:
-    images: chon26909/restaurant-portal:latest
+    image: chon26909/restaurant-portal:latest
     container_name: restaurant-portal
     # build:
     #   dockerfile: Dockerfile
