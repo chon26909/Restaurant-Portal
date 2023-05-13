@@ -3,13 +3,14 @@ import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import SidebarV2 from '../components/SidebarV2';
 
 const MainLayout: FC = () => {
     return (
         <main className='min-h-screen'>
             <Header />
             <MainLayoutStyle>
-                <Sidebar />
+                <SidebarV2 />
                 <ContentWapper>
                     <Outlet />
                 </ContentWapper>
