@@ -29,7 +29,9 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:latest, ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:${{ github.run_number }}
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:latest, 
+            ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:${{ github.run_number }}
 
   deploy:
     needs: build
@@ -42,7 +44,7 @@ jobs:
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:latest
 
       - name: Docker run container
-        run: docker run -name restaurant-portal-dev -d -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal
+        run: docker run --name restaurant-portal-dev -d -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal
 
       # - name:
       #   run: docker -v
