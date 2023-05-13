@@ -41,10 +41,8 @@ jobs:
       - name: Pull image from Docker Hub
         run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:latest
 
-      - name: Docker run container
-        run: docker run --name restaurant-portal-dev -d -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal
+      # - name: Docker run container
+      #   run: docker run --name restaurant-portal-dev -d -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal
 
-      # - name:
-      #   run: docker -v
-      # - name: run docker compose
-      #   run: docker-compose -f "docker-compose.yml" up -d --build
+      - name: Run Docker compose
+        run: docker-compose -f "docker-compose.yml" up -d
