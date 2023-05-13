@@ -34,6 +34,7 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal:{{ github.run_number }}
 
   deploy:
+    needs: build
     runs-on:
       - self-hosted
       - dev-server
