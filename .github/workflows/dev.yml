@@ -28,7 +28,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          # push: true
+          push: true
           repository: ${{ secrets.DOCKERHUB_USERNAME }}/restaurant-portal
           tags: latest, ${{ github.run_number }}
 
