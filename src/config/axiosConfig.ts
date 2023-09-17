@@ -2,7 +2,7 @@ import axios, { AxiosResponse, AxiosError, InternalAxiosRequestConfig } from 'ax
 
 const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
 
-    config.baseURL = process.env.VITE_API_URL
+    config.baseURL = process.env.VITE_BASE_URL
     
     const token = sessionStorage.getItem("token");
     config.headers.Authorization = 'Bearer ' + token;
